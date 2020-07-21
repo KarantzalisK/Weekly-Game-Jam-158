@@ -47,6 +47,12 @@ TagManager:
   - name: BackgroundDetails
     uniqueID: 19833113
     locked: 0
+  - name: Player
+    uniqueID: 4127924077
+    locked: 0
   - name: Roads
     uniqueID: 1069968799
+    locked: 0
+  - name: Enemy
+    uniqueID: 594727725
     locked: 0
