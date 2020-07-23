@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayAnimationThenDestroy : MonoBehaviour
 {
     private Animator animator;
-    private Animation animation;
     private int animatorParametersCount;
     public int accordingToInspectorListTriggerIndex;
     public string ObjectInContactTag;

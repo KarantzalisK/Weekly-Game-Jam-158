@@ -15,15 +15,15 @@ public class uIscripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wallHealthOBJ = GameObject.FindGameObjectWithTag("wall");
-        maxwallhealthINT = wallHealthOBJ.GetComponent<WallScript>().maxWallHealth;
-        waveIndexObj = GameObject.FindGameObjectWithTag("SpawnManager");
+        //wallHealthOBJ = GameObject.FindGameObjectWithTag("wall");
+        //maxwallhealthINT = wallHealthOBJ.GetComponent<WallScript>().maxWallHealth;
+        //waveIndexObj = GameObject.FindGameObjectWithTag("SpawnManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        wallhealthInt = wallHealthOBJ.GetComponent<WallScript>().currentWallHealth;
+        //wallhealthInt = wallHealthOBJ.GetComponent<WallScript>().currentWallHealth;
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
         {
             pauseMenu.SetActive(true);
@@ -39,16 +39,16 @@ public class uIscripts : MonoBehaviour
             Time.timeScale = 1;
 
         }
-        if (wallhealthInt >= maxwallhealthINT)
-        {
-            deadPanel.SetActive(true);   
-        }
+        //if (wallhealthInt >= maxwallhealthINT)
+        //{
+        //    deadPanel.SetActive(true);   
+        //}
         if (deadPanel.activeSelf)
         {
             Time.timeScale = 0;
 
         }
-        WaveIndicateVoid();
+        //WaveIndicateVoid();
     }
     public void LoadingScenes(string sceneName)
     {
@@ -61,10 +61,10 @@ public class uIscripts : MonoBehaviour
     {
         Application.Quit();
     }
-    public void WaveIndicateVoid()
-    {
-        waveIndexTXTobj.GetComponent<TMPro.TextMeshProUGUI>().text = "Wave " + "∞";
-    }
+    //public void WaveIndicateVoid()
+    //{
+    //    waveIndexTXTobj.GetComponent<TMPro.TextMeshProUGUI>().text = "Wave " + "∞";
+    //}
     
 
     
