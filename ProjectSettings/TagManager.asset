@@ -56,3 +56,6 @@ TagManager:
   - name: Enemy
     uniqueID: 594727725
     locked: 0
+  - name: Seagull
+    uniqueID: 1526786053
+    locked: 0
