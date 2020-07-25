@@ -19,7 +19,7 @@ public class TestAreaAnimationScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= respawnDelay)
+        if (Random.Range(timer/2,timer) >= respawnDelay)
         {
             transform.position = new Vector2(Random.Range(-areaEdgeTransf.position.x, areaEdgeTransf.position.x), Random.Range(-areaEdgeTransf.position.y, areaEdgeTransf.position.y));
             timer = 0;
