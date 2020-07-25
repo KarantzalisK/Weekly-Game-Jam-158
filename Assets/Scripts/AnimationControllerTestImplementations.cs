@@ -45,9 +45,9 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             turretTransform.parent = carryingTurretTransform.parent;
-            turretTransform.localRotation = carryingTurretTransform.localRotation;
+            turretTransform.rotation = carryingTurretTransform.rotation;
             animator.SetBool("Carrying", true);
-            turretTransform.localPosition = carryingTurretTransform.localPosition;
+            //turretTransform.localPosition = carryingTurretTransform.localPosition;
         }
         else if (Input.GetKey(KeyCode.LeftControl)&& Input.GetAxisRaw("Horizontal") < 0)
         {
@@ -57,7 +57,7 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         else
         {
             animator.SetBool("Carrying", false);
-            turretTransform.localRotation = new UnityEngine.Quaternion(0, 0, 0, 0);
+            turretTransform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
         }
     }
     private void spriteController()

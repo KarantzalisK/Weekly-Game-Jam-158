@@ -1,11 +1,10 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class moveTowerToPoint : MonoBehaviour
 {
-
-
 
     //a script that iterates a series of points
     //then moves an object randomly into some of them
@@ -17,7 +16,6 @@ public class moveTowerToPoint : MonoBehaviour
     //LOOP TRAVERSING
 
     //MAYBE USE DO-TWEEN?
-
     Transform transform;
 
     [SerializeField]
@@ -62,6 +60,12 @@ public class moveTowerToPoint : MonoBehaviour
         }
     }
 
+    //public void moveToSinglePoint() {
+    //    pointsToTraverse.Clear();
+    //    pointsToTraverse.Add(pointsAvailableToMove[Random.Range(0, pointsAvailableToMove.Count)]);
+    //    currentPointIndex = 0;
+    //    canTraverse = true;
+    //}
 
 
     public void moveToMultiplePoints(int amount)

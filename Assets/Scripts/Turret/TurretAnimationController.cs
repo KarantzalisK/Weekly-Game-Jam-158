@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TurretAnimationController : MonoBehaviour
 {
-    private moveTowerToPoint towerToPointScript;
+    //private moveTowerToPoint towerToPointScript;
     private Animator animator;
-    // Start is called before the first frame update
+    private PlayerParameters playerParameters;
+        // Start is called before the first frame update
     void Start()
     {
-        towerToPointScript = GetComponent<moveTowerToPoint>();
+        //towerToPointScript = GetComponent<moveTowerToPoint>();
         animator = GetComponent<Animator>();
+        playerParameters = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerParameters>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class TurretAnimationController : MonoBehaviour
     }
     private void animationConroller()
     {
-        if (towerToPointScript.canTraverse)
+        if (!playerParameters.carrying)
         {
             animator.SetBool("CanWalk", true);
         }

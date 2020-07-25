@@ -4,13 +4,14 @@ using UnityEngine;
 
 //TO-DO
 //RENAME SCRIPT
-
 public class BoltSeekTarget : MonoBehaviour
 {
     private towerParameters tower;
     private TurretShooting turretShooting;
     private Vector3 targetToKill;
     private Transform boltTransf;
+    private float boltLifeSpam;
+    private float boltdmg;
     // Start is called before the first frame update
     //placed at bolt preab
     void Start()
@@ -19,12 +20,19 @@ public class BoltSeekTarget : MonoBehaviour
         turretShooting = tower.GetComponent<TurretShooting>();
         targetToKill = turretShooting.enemyToShoot.gameObject.transform.position;
         boltTransf = this.transform;
+        boltLifeSpam = tower.boltLifeSpam;
+        boltdmg = tower.boltdmg;
+        StartCoroutine(waitToDestroy());
     }
 
     // Update is called once per frame
     void Update()
     {
         boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill,tower.boltSpeed*Time.deltaTime);
+        if (targetToKill == null)
+        {
+            Destroy(this.gameObject);
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,17 +40,17 @@ public class BoltSeekTarget : MonoBehaviour
         //StartCoroutine(waitToDestroy());
         if (collision.CompareTag("enemy"))
         {
-           collision.GetComponent<EnemyResetAndParameters>().currentHealth +=tower.boltdmg;
+           collision.GetComponent<EnemyResetAndParameters>().currentHealth += boltdmg;
             Destroy(this.gameObject);
         }
         
         
        
     }
-    //IEnumerator waitToDestroy()
-    //{
-    //    yield return new WaitForSeconds(tower.boltLifeSpam);
-    //    Destroy(this.gameObject);
-    //}
+    IEnumerator waitToDestroy()
+    {
+        yield return new WaitForSeconds(boltLifeSpam);
+        Destroy(this.gameObject);
+    }
 
 }
