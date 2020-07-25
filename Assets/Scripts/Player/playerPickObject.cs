@@ -37,7 +37,7 @@ public class playerPickObject : MonoBehaviour
         {
            player.carrying = true;
             player.holdingObject = true;
-            turret.GetComponent<moveTowerToPoint>().canTraverse = false;
+            //turret.GetComponent<moveTowerToPoint>().canTraverse = false;
 
 
 
@@ -47,7 +47,7 @@ public class playerPickObject : MonoBehaviour
 
             player.carrying = false;
             player.holdingObject = false;
-            turret.GetComponent<moveTowerToPoint>().canTraverse = true;
+            //turret.GetComponent<moveTowerToPoint>().canTraverse = true;
 
 
         }

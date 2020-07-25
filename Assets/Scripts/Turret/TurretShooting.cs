@@ -19,14 +19,14 @@ public class TurretShooting : MonoBehaviour
     private float timer;
     [HideInInspector]
     public Collider2D[] currentEnemiesInScene;
-    private moveTowerToPoint moveTowerToPoint;
+    //private moveTowerToPoint moveTowerToPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         tower = GetComponent<towerParameters>();
         smallestDistance = Mathf.Infinity;
-        moveTowerToPoint = GetComponent<moveTowerToPoint>();
+        //moveTowerToPoint = GetComponent<moveTowerToPoint>();
     }
 
     // Update is called once per frame
@@ -83,14 +83,14 @@ public class TurretShooting : MonoBehaviour
     }
     private void towerSeekNDestroy()
     {
-        if (enemyToShoot != null && Vector2.Distance(transform.position,enemyToShoot.transform.position)>moveTowerToPoint.distanceOffset)
+        if (enemyToShoot != null && Vector2.Distance(transform.position,enemyToShoot.transform.position)>tower.towerReturnDistanceOffset)
         {
-            moveTowerToPoint.canTraverse = false;
-            transform.position = Vector2.MoveTowards(transform.position, enemyToShoot.transform.position, moveTowerToPoint.moveStep);
+            //moveTowerToPoint.canTraverse = false;
+            transform.position = Vector2.MoveTowards(transform.position, enemyToShoot.transform.position, tower.shootinSpeed);
         }
-        else
-        {
-            moveTowerToPoint.canTraverse = true;
-        }
+        //else
+        //{
+        //    moveTowerToPoint.canTraverse = true;
+        //}
     }
 } 

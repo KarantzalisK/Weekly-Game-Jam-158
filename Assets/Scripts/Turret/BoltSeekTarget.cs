@@ -11,7 +11,7 @@ public class BoltSeekTarget : MonoBehaviour
     private Vector3 targetToKill;
     private Transform boltTransf;
     private float boltLifeSpam;
-    private float boltdmg;
+    private float boltdmg,boltSpeed;
     // Start is called before the first frame update
     //placed at bolt preab
     void Start()
@@ -23,12 +23,13 @@ public class BoltSeekTarget : MonoBehaviour
         boltLifeSpam = tower.boltLifeSpam;
         boltdmg = tower.boltdmg;
         StartCoroutine(waitToDestroy());
+        boltSpeed = tower.boltSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill,tower.boltSpeed*Time.deltaTime);
+        boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill, boltSpeed * Time.deltaTime);
         if (targetToKill == null)
         {
             Destroy(this.gameObject);

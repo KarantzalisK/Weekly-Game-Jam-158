@@ -57,6 +57,7 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         else
         {
             animator.SetBool("Carrying", false);
+            turretTransform.parent = null;
             turretTransform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
         }
     }
