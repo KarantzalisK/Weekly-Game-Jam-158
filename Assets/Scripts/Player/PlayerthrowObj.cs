@@ -38,7 +38,7 @@ public class PlayerthrowObj : MonoBehaviour
             player.carrying = false;
             player.holdingObject = false;
             player.canShoot = true;
-            //turret.GetComponent<moveTowerToPoint>().canTraverse = true;
+            //turret.GetComponent<moveTowerToPoint>().canTraverse = true;   
         }
        if (player.canShoot)
         {
