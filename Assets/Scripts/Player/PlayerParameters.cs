@@ -17,7 +17,8 @@ public class PlayerParameters : MonoBehaviour
     [HideInInspector]
     public Vector2 movement;
     public Transform newTurretPosition;
-                       public GameObject turretObj;
+    [HideInInspector]
+    public GameObject turretObj;
     [HideInInspector]
     public Vector2 clickVector;
 
