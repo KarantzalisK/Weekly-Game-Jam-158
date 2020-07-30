@@ -12,6 +12,8 @@ public class AnimationControllerTestImplementations : MonoBehaviour
     public Transform carryingTurretTransform;
     private PlayerParameters playerParameters;
     private Transform turretTransform;
+    private int animatorParametersCount=0;
+    public List<string> animationParametersNames;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         WalkingAnimationController();
         CarryTurretController();
         spriteController();
+        checkIfAnimationIsPlayed();
+        ShowParametersNamesAtInspector();
         if (wineSurpaced)
         {
             animator.SetTrigger("WineDrinking");
@@ -65,6 +69,23 @@ public class AnimationControllerTestImplementations : MonoBehaviour
             turretTransform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("collectible"))
+        {
+            animator.Play("PickUpCollectibleAnim", 0);
+            animator.SetBool("collidedWithCoin", true);
+
+        }
+    }
+    private void checkIfAnimationIsPlayed()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("PickUpCollectibleAnim")&&animator.GetCurrentAnimatorClipInfo(0).Length<animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
+        {
+            animator.SetBool("collidedWithCoin", false);
+
+        }
+    }
     private void spriteController()
     {
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -75,6 +96,13 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         {
             sprite.flipX = false;
 
+        }
+    }
+    private void ShowParametersNamesAtInspector()
+    {
+        for (int i = 0; i < animatorParametersCount; i++)
+        {
+            animationParametersNames.Add(animator.GetParameter(i).name);
         }
     }
 }
