@@ -10,7 +10,7 @@ public class coinCollectorScript : MonoBehaviour
     //MOVE UPGRADES TO UPGRADE MANAGER OR GAME MANAGER
 
 
-    public GameObject coinsGatheredTextobj;
+    //public GameObject coinsGatheredTextobj;
     public int coinsToUpgrade=0,coinMultiplier;
     [HideInInspector]
     public int coinsGathered = 0;
@@ -26,7 +26,7 @@ public class coinCollectorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
+        //coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

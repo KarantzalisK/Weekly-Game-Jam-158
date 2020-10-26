@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8278972251868154972}
   - component: {fileID: 8278972251868154970}
   - component: {fileID: 8278972251868154968}
+  - component: {fileID: 8880039959606640121}
   - component: {fileID: 8278972251868154950}
   - component: {fileID: 8278972251868154969}
   - component: {fileID: 8278972251868154948}
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wineSurpaced: 0
   carryingTurretTransform: {fileID: 8278972251432020720}
-  turretTransform: {fileID: 0}
+  animationParametersNames: []
 --- !u!50 &8278972251868154968
 Rigidbody2D:
   serializedVersion: 4
@@ -175,6 +176,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8880039959606640121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278972251868154961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01977ea496d6b44a93ab801b5d9056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsGatheredTextobj: {fileID: 0}
+  coinsToUpgrade: 0
+  coinMultiplier: 0
+  coinsGathered: 0
+  objectATMaxEdge: {fileID: 0}
 --- !u!114 &8278972251868154950
 MonoBehaviour:
   m_ObjectHideFlags: 0
