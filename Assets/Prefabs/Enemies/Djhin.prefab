@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3644140007619593966}
   - component: {fileID: 368019836653550226}
   - component: {fileID: 6092447234234947571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Djhin
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.026034579, y: 0.0809964}
   m_SpriteTilingProperty:
@@ -173,9 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   currentHealth: 0
-  maxhealth: 10
+  maxhealth: 15
   initialHealth: 0
-  speed: 30
+  speed: 2
 --- !u!1001 &548646591692482269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,6 +198,51 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2381187217597430270, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381187217597430270, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Name
@@ -307,6 +352,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838000523512062090, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838000523512062090, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520660491539434828, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520660491539434828, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520660491539434828, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520660491539434828, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75b5b476ed5aef429370ab854e86a34, type: 3}

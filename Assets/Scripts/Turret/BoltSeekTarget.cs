@@ -32,7 +32,7 @@ public class BoltSeekTarget : MonoBehaviour
         boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill, boltSpeed * Time.deltaTime);
         if (targetToKill == null)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
 
     }
@@ -42,7 +42,7 @@ public class BoltSeekTarget : MonoBehaviour
         if (collision.CompareTag("enemy"))
         {
            collision.GetComponent<EnemyResetAndParameters>().currentHealth += boltdmg;
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
         
         

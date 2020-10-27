@@ -33,7 +33,7 @@ public class TurretShooting : MonoBehaviour
     void Update()
     {
 
-        towerSeekNDestroy();
+        //towerSeekNDestroy();
 
 
 
@@ -81,16 +81,16 @@ public class TurretShooting : MonoBehaviour
 
         Instantiate(tower.boltPrefab, tower.transform.position, Quaternion.identity);
     }
-    private void towerSeekNDestroy()
-    {
-        if (enemyToShoot != null && Vector2.Distance(transform.position,enemyToShoot.transform.position)>tower.towerReturnDistanceOffset)
-        {
-            //moveTowerToPoint.canTraverse = false;
-            transform.position = Vector2.MoveTowards(transform.position, enemyToShoot.transform.position, tower.shootinSpeed);
-        }
-        //else
-        //{
-        //    moveTowerToPoint.canTraverse = true;
-        //}
-    }
+    //private void towerSeekNDestroy()
+    //{
+    //    if (enemyToShoot != null && Vector2.Distance(transform.position,enemyToShoot.transform.position)>tower.towerReturnDistanceOffset)
+    //    {
+    //        //moveTowerToPoint.canTraverse = false;
+    //        transform.position = Vector2.MoveTowards(transform.position, enemyToShoot.transform.position, tower.shootinSpeed);
+    //    }
+    //    //else
+    //    //{
+    //    //    moveTowerToPoint.canTraverse = true;
+    //    //}
+    //}
 } 

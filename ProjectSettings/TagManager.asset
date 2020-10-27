@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - wall
   - collectible
+  - SpawnManager
   layers:
   - Default
   - TransparentFX
