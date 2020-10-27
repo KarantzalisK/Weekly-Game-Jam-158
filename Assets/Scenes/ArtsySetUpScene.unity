@@ -8595,6 +8595,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 673781958379263002, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: wall
+      objectReference: {fileID: 0}
     - target: {fileID: 820531287378444229, guid: 09c223da01b60c542808ebed8039d986,
         type: 3}
       propertyPath: m_AnchoredPosition.y
