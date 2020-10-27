@@ -12,9 +12,11 @@ public class coinCollectorScript : MonoBehaviour
 
     //public GameObject coinsGatheredTextobj;
     public int coinsToUpgrade=0,coinMultiplier;
+    private int spawnLocsIndex;
+    public GameObject coinsGatheredTextobj;
     [HideInInspector]
     public int coinsGathered = 0;
-    public Transform objectATMaxEdge;
+    public List<Transform> SpawnLocs;
 
 
     // Start is called before the first frame update
@@ -26,13 +28,13 @@ public class coinCollectorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
+        coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag =="collectible")
+        public void OnTriggerEnter2D(Collider2D collision)
         {
-            CollectibleRectanglePosition(collision.gameObject);
+            if (collision.gameObject.tag =="collectible")
+            {   
+                CollectibleRectanglePosition(collision.gameObject);
             if (coinsGathered < coinsToUpgrade && coinsGathered<coinsToUpgrade- coinMultiplier)
             {
                 coinsGathered = coinsGathered + coinMultiplier;
@@ -44,7 +46,12 @@ public class coinCollectorScript : MonoBehaviour
     }
     private void CollectibleRectanglePosition(GameObject collectible) //respawns object to different position based to an imaginary rectanble by gettin an object at the edge of it
     {
-        collectible.transform.position = new Vector2(Random.Range(-objectATMaxEdge.position.x, objectATMaxEdge.position.x), Random.Range(-objectATMaxEdge.position.y, objectATMaxEdge.position.y));
+        spawnLocsIndex = Random.Range(0, SpawnLocs.Count);
+        if (SpawnLocs[spawnLocsIndex].transform.position != collectible.transform.position)
+        {
+            collectible.transform.position = SpawnLocs[spawnLocsIndex].transform.position;
+        }
+        
 
     }
 

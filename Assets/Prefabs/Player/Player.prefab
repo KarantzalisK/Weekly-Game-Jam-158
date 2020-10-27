@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278972251432020723}
-  m_LocalRotation: {x: 0, y: 0, z: -0.706613, w: 0.7076003}
-  m_LocalPosition: {x: -0.042, y: 0.316, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8278972251868154975}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.92}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8278972251868154961
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278972251868154961}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -172,8 +172,8 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Interpolate: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &8880039959606640121
@@ -188,9 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa01977ea496d6b44a93ab801b5d9056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsGatheredTextobj: {fileID: 0}
-  coinsToUpgrade: 0
-  coinMultiplier: 0
+  coinsToUpgrade: 45
+  coinMultiplier: 1
   coinsGathered: 0
   objectATMaxEdge: {fileID: 0}
 --- !u!114 &8278972251868154950
@@ -225,7 +224,7 @@ MonoBehaviour:
   holdingObject: 0
   throwingSpeed: 10
   movement: {x: 0, y: 0}
-  newTurretPosition: {fileID: 0}
+  newTurretPosition: {fileID: 8278972251432020720}
   turretObj: {fileID: 8278972251432020723}
   clickVector: {x: 0, y: 0}
 --- !u!114 &8278972251868154948
@@ -263,7 +262,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.017053604, y: -0.043409646}
