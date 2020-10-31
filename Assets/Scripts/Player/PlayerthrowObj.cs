@@ -25,6 +25,10 @@ public class PlayerthrowObj : MonoBehaviour
     void Update()
     { 
         
+
+    }
+    private void FixedUpdate()
+    {
         ShootinTurretsController();
 
     }
@@ -54,6 +58,6 @@ public class PlayerthrowObj : MonoBehaviour
     }
     public void shootingTurretAction(Vector2 genreicVector)
     {   
-        turret.transform.position = Vector2.MoveTowards(turret.transform.position, genreicVector, player.throwingSpeed * Time.deltaTime);
+        turret.transform.position = Vector2.MoveTowards(turret.transform.position, genreicVector, player.throwingSpeed * Time.fixedDeltaTime);
     }
 }

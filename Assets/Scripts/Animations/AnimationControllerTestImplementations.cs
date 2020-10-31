@@ -27,7 +27,7 @@ public class AnimationControllerTestImplementations : MonoBehaviour
     void Update()
     {
         WalkingAnimationController();
-        //CarryTurretController();
+        CarryTurretController();
         spriteController();
         checkIfAnimationIsPlayed();
         ShowParametersNamesAtInspector();
@@ -48,30 +48,22 @@ public class AnimationControllerTestImplementations : MonoBehaviour
 
         }
     }
-    //private void CarryTurretController()
-    //{
-    //    if (Input.GetKey(KeyCode.Space)&&playerParameters.canCarry)
-    //    {
-    //        turretTransform.parent = carryingTurretTransform.parent;
-    //        turretTransform.rotation = carryingTurretTransform.rotation;
-    //        animator.SetBool("Carrying", true);
-    //        //turretTransform.localPosition = carryingTurretTransform.localPosition;
-    //    }
-    //    else if (Input.GetKey(KeyCode.Space) && Input.GetAxisRaw("Horizontal") < 0)
-    //    {
-    //        carryingTurretTransform.localPosition = new UnityEngine.Vector2(-carryingTurretTransform.localPosition.x, carryingTurretTransform.localPosition.y);
-
-    //    }
-    //    else
-    //    {
-    //        animator.SetBool("Carrying", false);
-    //        turretTransform.parent = null;
-    //        turretTransform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
-    //    }
-    //}
+    private void CarryTurretController()
+    {
+        if (Input.GetKey(KeyCode.Space) && playerParameters.canCarry)
+        {
+            animator.SetBool("Carrying", true);
+        }
+      
+        else
+        {
+            animator.SetBool("Carrying", false);
+            
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("collectible"))
+        if (collision.CompareTag("collectible")&!playerParameters.carrying)
         {
             animator.Play("PickUpCollectibleAnim", 0);
             animator.SetBool("collidedWithCoin", true);

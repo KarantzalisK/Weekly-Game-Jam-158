@@ -213,6 +213,12 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -248,6 +254,12 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Name

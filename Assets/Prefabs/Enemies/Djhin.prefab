@@ -116,8 +116,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.026034579, y: 0.0809964}
   m_SpriteTilingProperty:
@@ -211,8 +211,14 @@ PrefabInstance:
     - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -233,16 +239,27 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Name
@@ -361,7 +378,7 @@ PrefabInstance:
     - target: {fileID: 7838000523512062090, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8520660491539434828, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}

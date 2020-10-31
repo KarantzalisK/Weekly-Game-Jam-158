@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4065ae50bc066a84da5ee6d8b0b91a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealthSlider: {fileID: 0}
+  enemyHealthSlider: {fileID: 5490280271170575549}
 --- !u!114 &2584987287488226987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,12 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -233,6 +239,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645652711423372645, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4988584055337579093, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Type
@@ -242,7 +258,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
+        type: 3}
     - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Name
@@ -381,3 +398,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2375454343311014967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5490280271170575549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838000523512062090, guid: d75b5b476ed5aef429370ab854e86a34,
+    type: 3}
+  m_PrefabInstance: {fileID: 2375454343311014967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
