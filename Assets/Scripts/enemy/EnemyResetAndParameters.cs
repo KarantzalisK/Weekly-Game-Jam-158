@@ -16,6 +16,7 @@ public class EnemyResetAndParameters : MonoBehaviour
     public float initialHealth;
     public float speed;
     private Vector2 startinPosition;
+    public List<int> enemyPathToUse;
     // Start is called before the first frame update
     void Start()
     {

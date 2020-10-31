@@ -17,6 +17,7 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
     private EnemyResetAndParameters enemyStats;
     private GameObject spawnManager;
     private Vector3 enemyObjectivePos;
+    
 
 
     // Start is called before the first frame update
@@ -25,26 +26,27 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager");
         enemyPathnWaypoints = spawnManager.GetComponent<EnemyPaths>();
         enemyStats = gameObject.GetComponent<EnemyResetAndParameters>();
-        pathIndex = Random.Range(0, spawnManager.GetComponent<SpawnManager>().enemyPaths.Count);
+        pathIndex = Random.Range(0, enemyStats.enemyPathToUse.Count-1);
         waypointIndex = 0;
-        transform.position = enemyPathnWaypoints.enemyPaths[pathIndex].waypoints[waypointIndex].transform.position;
+        transform.position = enemyPathnWaypoints.enemyPaths[enemyStats.enemyPathToUse[pathIndex]].waypoints[waypointIndex].transform.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.LogWarning(enemyStats.enemyPathToUse.Count + "to count "+gameObject.name+" the number is "+enemyStats.enemyPathToUse[pathIndex]);
         enemyMovement();
     }
     public void enemyMovement()
     {
-        enemyObjectivePos = enemyPathnWaypoints.enemyPaths[pathIndex].waypoints[waypointIndex].transform.position;
+        enemyObjectivePos = enemyPathnWaypoints.enemyPaths[enemyStats.enemyPathToUse[pathIndex]].waypoints[waypointIndex].transform.position;
         this.transform.position = Vector3.MoveTowards(this.transform.position, enemyObjectivePos, enemyStats.speed* Time.deltaTime);
         if (this.gameObject.transform.position == enemyObjectivePos)
         {
             waypointIndex++;
         }
-        if (waypointIndex >= enemyPathnWaypoints.enemyPaths[pathIndex].waypoints.Count)
+        if (waypointIndex >= enemyPathnWaypoints.enemyPaths[enemyStats.enemyPathToUse[pathIndex]].waypoints.Count)
         {
             Destroy(this.gameObject);
         }

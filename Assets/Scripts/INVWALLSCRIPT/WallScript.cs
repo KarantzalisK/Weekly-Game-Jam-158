@@ -30,9 +30,9 @@ public class WallScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag.ToLower().Equals("enemy"))
         {
-            currentWallHealth = currentWallHealth + collision.gameObject.GetComponent<EnemyResetAndParameters>().damage;
+            currentWallHealth +=collision.gameObject.GetComponent<EnemyResetAndParameters>().damage;
             healthslider.value = currentWallHealth;
             Debug.Log(healthslider.maxValue);
         }

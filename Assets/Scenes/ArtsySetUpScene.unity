@@ -4451,6 +4451,12 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &997258189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5034680308500667798, guid: fb4dc1a2750d4764e88f395a728820ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 5034680307525089003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1230357601
 GameObject:
   m_ObjectHideFlags: 0
@@ -7846,13 +7852,13 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 4437770670108679844, guid: f7b10315c33d0794ebc046e866269d69,
+      objectReference: {fileID: 3008803895302380086, guid: 9d18d6127ddf8c04ca09f6a01e37779e,
         type: 3}
     - target: {fileID: 998407873081188472, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
       propertyPath: enemyPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 3008803895302380086, guid: 9d18d6127ddf8c04ca09f6a01e37779e,
+      objectReference: {fileID: 4437770670108679844, guid: f7b10315c33d0794ebc046e866269d69,
         type: 3}
     - target: {fileID: 998407873081188472, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
@@ -7950,6 +7956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943291030592321657, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: sceneName
+      value: ArtsySetUpScene
       objectReference: {fileID: 0}
     - target: {fileID: 1943291030605264867, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
@@ -8583,6 +8594,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3368821756208154903, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.106271505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368821756208154903, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8888278
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161197514915185297, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: maxWallHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6813373088799037056, guid: 09c223da01b60c542808ebed8039d986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8709,6 +8735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
+      propertyPath: enemiesInThisRound.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
       propertyPath: enemySpawningRate
       value: 3
       objectReference: {fileID: 0}
@@ -8716,6 +8747,26 @@ PrefabInstance:
         type: 3}
       propertyPath: nextWaveStartDelay
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
+      propertyPath: enemiesInThisRound.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
+      propertyPath: enemiesInThisRound.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
+      propertyPath: enemiesInThisRound.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
+      propertyPath: maxEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe39b9600ea44644ab97cf660862a4d4, type: 3}
@@ -8842,8 +8893,13 @@ PrefabInstance:
     - target: {fileID: 8278972251868154969, guid: 7f7c22468e51cf94286fc07f86f79cac,
         type: 3}
       propertyPath: throwingSpeed
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8278972251868154969, guid: 7f7c22468e51cf94286fc07f86f79cac,
+        type: 3}
+      propertyPath: turretObj
+      value: 
+      objectReference: {fileID: 997258189}
     - target: {fileID: 8278972251868154973, guid: 7f7c22468e51cf94286fc07f86f79cac,
         type: 3}
       propertyPath: m_IsTrigger

@@ -17,6 +17,7 @@ public class coinCollectorScript : MonoBehaviour
     [HideInInspector]
     public int coinsGathered = 0;
     public List<Transform> SpawnLocs;
+    private Transform previousLoc;
 
 
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class coinCollectorScript : MonoBehaviour
         }
         Debug.Log("KOLAI");
     }
-    private void CollectibleRectanglePosition(GameObject collectible) //respawns object to different position based to an imaginary rectanble by gettin an object at the edge of it
+    private void CollectibleRectanglePosition(GameObject collectible) //respawns object to spawn locations
     {
         spawnLocsIndex = Random.Range(0, SpawnLocs.Count);
         if (SpawnLocs[spawnLocsIndex].transform.position != collectible.transform.position)

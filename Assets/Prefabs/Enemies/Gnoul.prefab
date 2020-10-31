@@ -150,6 +150,7 @@ MonoBehaviour:
   maxhealth: 5
   initialHealth: 0
   speed: 5
+  enemyPathToUse: 0000000001000000
 --- !u!61 &3455850280827649925
 BoxCollider2D:
   m_ObjectHideFlags: 0

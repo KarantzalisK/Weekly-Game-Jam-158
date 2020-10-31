@@ -25,28 +25,31 @@ public class SpawnManager : MonoBehaviour
     public bool canSpawn = true;
     [HideInInspector]
     public int i = 0, amountOfEnemies = 0, waveNumber = 0,amountOfEasiestEnemy;
-    private int  enemyIndexer;
     public GameObject[] enemyPrefabs;
+    private int enemyIndexer=0;
 
 
     void Start()
     {
         waveNumber = 0;
+       
     }
 
     void Update()
     {
         if (waveNumber < activeWave.Count)
         {
-            amountOfEasiestEnemy = activeWave[waveNumber].amountOfFirstEnemyType;
             amountOfEnemies = activeWave[waveNumber].maxEnemies;
             instanciateDelay = activeWave[waveNumber].enemySpawningRate;
 
             timeCounter += Time.deltaTime;
-            if (canSpawn)
+            if (i < amountOfEnemies)
             {
-                enemySelector();
-                enemyInstantiateCheck();
+                if (canSpawn)
+                {
+                    enemyInstantiateCheck();
+                    enemySelector();
+                }
             }
         }
         else {
@@ -58,8 +61,7 @@ public class SpawnManager : MonoBehaviour
     private void enemyInstantiateCheck()
     {
 
-        if (i < amountOfEnemies)
-        {  
+         
             if (timeCounter >= instanciateDelay)
             {
                 
@@ -70,7 +72,7 @@ public class SpawnManager : MonoBehaviour
 
             }
 
-        }
+        
 
         else
         {
@@ -82,15 +84,23 @@ public class SpawnManager : MonoBehaviour
     {
        activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[enemyIndexer], gameObject.transform.position, Quaternion.identity));
     }
+  
+    //private void enemySelector()
+    //{
+    //    if (i < amountOfEasiestEnemy)
+    //    {
+    //        enemyIndexer = 0;
+    //    }
+    //     if (i>amountOfEasiestEnemy && i <= amountOfEnemies)
+    //    {
+    //        enemyIndexer = UnityEngine.Random.Range(1,enemyPrefabs.Length);
+    //    }
+    //}
     private void enemySelector()
     {
-        if (i < amountOfEasiestEnemy)
+        if (i > activeWave[waveNumber].enemiesInThisRound[enemyIndexer])
         {
-            enemyIndexer = 0;
-        }
-         if (i>amountOfEasiestEnemy && i <= amountOfEnemies)
-        {
-            enemyIndexer = UnityEngine.Random.Range(1,enemyPrefabs.Length);
+            enemyIndexer++;
         }
     }
 

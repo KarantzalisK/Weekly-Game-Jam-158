@@ -9,17 +9,17 @@ public class PlayerParameters : MonoBehaviour
 
     Rigidbody2D rb;
     public float speed;
-    //[HideInInspector]
+    [HideInInspector]
     public bool canCarry = false, carrying = false, canShoot = false;
-    //[HideInInspector]
+    [HideInInspector]
     public bool holdingObject = false;
     public float throwingSpeed;
-    //[HideInInspector]
+    [HideInInspector]
     public Vector2 movement;
     public Transform newTurretPosition;
     //[HideInInspector]
     public GameObject turretObj;
-    //[HideInInspector]
+    [HideInInspector]
     public Vector2 clickVector;
 
 

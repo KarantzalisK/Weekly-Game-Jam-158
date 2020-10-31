@@ -7,19 +7,27 @@ using UnityEngine;
 
 public class EnemyWavesParameters : MonoBehaviour
 {
-    public int maxEnemies,amountOfFirstEnemyType;
+    //[HideInInspector]
+    [HideInInspector]
+    public int maxEnemies=0 ;
     public int nextWaveStartDelay;
     public int numberOfEnemyTypes;
     public float enemySpawningRate;
     [HideInInspector]
     public List<GameObject> currentEnemies;
-    private GameObject spawnManager; 
+    private GameObject spawnManager;
+    public List<int> enemiesInThisRound;
+    
 
-
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager");
+       
+        for (int i = 0; i < enemiesInThisRound.Count; i++)
+        {
+            maxEnemies = maxEnemies + enemiesInThisRound[i];
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +36,7 @@ void Start()
         if (currentEnemies.Count == maxEnemies)
         {
             StartCoroutine(waveChangeDelay());
-        }
+        }     
     }
     IEnumerator waveChangeDelay()
     {
@@ -51,4 +59,5 @@ void Start()
             existingEnemiesCounter = 0;
         }
         }
+  
 }

@@ -176,6 +176,7 @@ MonoBehaviour:
   maxhealth: 15
   initialHealth: 0
   speed: 2
+  enemyPathToUse: 02000000
 --- !u!1001 &548646591692482269
 PrefabInstance:
   m_ObjectHideFlags: 0
