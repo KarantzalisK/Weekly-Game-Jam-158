@@ -13,7 +13,7 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
     private EnemyPaths enemyPathnWaypoints;
     [HideInInspector]
     public int pathIndex, waypointIndex;
-    private SpawnManager spawnMng;
+    //private SpawnManager spawnMng;
     private EnemyResetAndParameters enemyStats;
     private GameObject spawnManager;
     private Vector3 enemyObjectivePos;
@@ -26,7 +26,7 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager");
         enemyPathnWaypoints = spawnManager.GetComponent<EnemyPaths>();
         enemyStats = gameObject.GetComponent<EnemyResetAndParameters>();
-        pathIndex = Random.Range(0, enemyStats.enemyPathToUse.Count-1);
+        pathIndex = Random.Range(0, enemyStats.enemyPathToUse.Count);
         waypointIndex = 0;
         transform.position = enemyPathnWaypoints.enemyPaths[enemyStats.enemyPathToUse[pathIndex]].waypoints[waypointIndex].transform.position;
 

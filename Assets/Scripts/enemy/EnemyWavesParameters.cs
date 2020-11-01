@@ -55,8 +55,7 @@ public class EnemyWavesParameters : MonoBehaviour
             spawnManager.GetComponent<SpawnManager>().waveNumber++;
             spawnManager.GetComponent<SpawnManager>().canSpawn = true;
             spawnManager.GetComponent<SpawnManager>().i = 0;
-
-            existingEnemiesCounter = 0;
+             existingEnemiesCounter = 0;
         }
         }
   
