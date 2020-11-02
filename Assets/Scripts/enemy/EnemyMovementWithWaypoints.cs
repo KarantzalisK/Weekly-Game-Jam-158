@@ -37,6 +37,7 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
     {
         Debug.LogWarning(enemyStats.enemyPathToUse.Count + "to count "+gameObject.name+" the number is "+enemyStats.enemyPathToUse[pathIndex]);
         enemyMovement();
+      
     }
     public void enemyMovement()
     {

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4695623828134494015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.72, y: 0.17, z: 0}
+  m_LocalPosition: {x: 8.72, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4707478325308948029}
@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -147,10 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   currentHealth: 0
-  maxhealth: 40
+  maxhealth: 50
   initialHealth: 0
-  speed: 1
-  enemyPathToUse: 03000000
+  speed: 0.4
+  enemyPathToUse: 02000000
 --- !u!61 &8224043851714223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13769388, y: -0.07425308}
+  m_Offset: {x: 0.0894804, y: -0.07425308}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40922642, y: 1.1679511}
+  m_Size: {x: 0.863575, y: 1.1679511}
   m_EdgeRadius: 0
 --- !u!1001 &2375454343311014967
 PrefabInstance:

@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -173,9 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   currentHealth: 0
-  maxhealth: 15
+  maxhealth: 8
   initialHealth: 0
-  speed: 2
+  speed: 1.4
   enemyPathToUse: 02000000
 --- !u!1001 &548646591692482269
 PrefabInstance:

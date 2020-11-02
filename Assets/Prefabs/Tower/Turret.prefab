@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -100,8 +101,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
-  m_Size: {x: 0.51, y: 1.8}
+  m_Offset: {x: 0, y: 0.11878896}
+  m_Size: {x: 0.51, y: 2.0624218}
   m_Direction: 0
 --- !u!114 &5034680308500667752
 MonoBehaviour:
@@ -143,16 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09be41114d1da8741b0d65fcec0bbaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerDMG: 1
-  reloadDelay: 1
-  shootinSpeed: 1
-  radius: 1
-  boltSpeed: 1
-  boltdmg: 1
-  turretRespawnDelay: 1
+  towerDMG: 20
+  reloadDelay: 0.2
+  shootinSpeed: 4
+  radius: 3
+  boltSpeed: 6
+  boltdmg: 5
+  turretRespawnDelay: 2
   boltPrefab: {fileID: 4246228772910847865, guid: 372811f35c4664b4f87d25a2d73ff642,
     type: 3}
-  boltLifeSpam: 1
+  boltLifeSpam: 3
   enemieLayer:
     serializedVersion: 2
     m_Bits: 256

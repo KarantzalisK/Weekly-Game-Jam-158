@@ -37,13 +37,14 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
+        
         if (waveNumber < activeWave.Count)
         {
             amountOfEnemies = activeWave[waveNumber].maxEnemies;
             instanciateDelay = activeWave[waveNumber].enemySpawningRate;
 
             timeCounter += Time.deltaTime;
-            if (i < amountOfEnemies)
+            if (i < activeWave[waveNumber].enemiesInThisRound[enemyIndexer])
             {
                 if (canSpawn)
                 {
@@ -56,7 +57,7 @@ public class SpawnManager : MonoBehaviour
             ///Game Finished
             Debug.Log("Finished Final Wave Of This Level");
         }
-
+        Debug.LogWarning(activeWave[waveNumber].enemiesInThisRound[enemyIndexer]+"number of enemies");
     }
     private void enemyInstantiateCheck()
     {
@@ -79,7 +80,13 @@ public class SpawnManager : MonoBehaviour
     }
     private void enemyInstantiatNaddToList()
     {
-       activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[enemyIndexer], gameObject.transform.position, Quaternion.identity));
+        if (enemyIndexer < (enemyPrefabs.Length)) { 
+       activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[UnityEngine.Random.Range(enemyIndexer, enemyIndexer + 2)], gameObject.transform.position, Quaternion.identity));
+        }
+        else
+        {
+            activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[enemyIndexer], gameObject.transform.position, Quaternion.identity));
+        }
     }
   
     //private void enemySelector()
@@ -95,9 +102,10 @@ public class SpawnManager : MonoBehaviour
     //}
     private void enemySelector()
     {
-        if (i > activeWave[waveNumber].enemiesInThisRound[enemyIndexer])
+        if (i >= activeWave[waveNumber].enemiesInThisRound[enemyIndexer])
         {
             enemyIndexer++;
+            i= 0;
         }
     }
 

@@ -17,7 +17,6 @@ public class coinCollectorScript : MonoBehaviour
     [HideInInspector]
     public int coinsGathered = 0;
     public List<Transform> SpawnLocs;
-    private Transform previousLoc;
 
 
     // Start is called before the first frame update
@@ -29,20 +28,33 @@ public class coinCollectorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
+        if (coinsGathered < coinsToUpgrade * coinMultiplier)
+        {
+            coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
+        }
+        else
+        {
+            coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = "You are drunk GZ";
+
+        }
     }
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag =="collectible")
             {   
                 CollectibleRectanglePosition(collision.gameObject);
-            if (coinsGathered < coinsToUpgrade && coinsGathered<coinsToUpgrade- coinMultiplier)
+            if (coinsGathered < coinsToUpgrade && coinsGathered < coinsToUpgrade - coinMultiplier)
             {
                 coinsGathered = coinsGathered + coinMultiplier;
-                
+
             }
-            else coinsGathered = coinsToUpgrade;
+            else 
+            {
+                coinsGathered = coinsToUpgrade;
+                collision.gameObject.SetActive(false);
+                }
         }
+             
         Debug.Log("KOLAI");
     }
     private void CollectibleRectanglePosition(GameObject collectible) //respawns object to spawn locations

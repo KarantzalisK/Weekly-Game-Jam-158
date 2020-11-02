@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -149,7 +150,7 @@ MonoBehaviour:
   currentHealth: 0
   maxhealth: 5
   initialHealth: 0
-  speed: 5
+  speed: 1.6
   enemyPathToUse: 0000000001000000
 --- !u!61 &3455850280827649925
 BoxCollider2D:
