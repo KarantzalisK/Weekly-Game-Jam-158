@@ -9,6 +9,8 @@ public class uIscripts : MonoBehaviour
     public GameObject pauseMenu,deadPanel,mainMenu,WinningPanel;
     public GameObject wallHealthOBJ,waveIndexObj;
     public GameObject waveIndexTXTobj;
+    [HideInInspector]
+    public bool winningPannelActivate=false;
 
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class uIscripts : MonoBehaviour
             Time.timeScale = 1;
 
         }
-        if (waveIndexObj.GetComponent<SpawnManager>().waveNumber > waveIndexObj.GetComponent<SpawnManager>().activeWave.Count - 1)
+        if (winningPannelActivate)
         {
             WinningPanel.SetActive(true);
 

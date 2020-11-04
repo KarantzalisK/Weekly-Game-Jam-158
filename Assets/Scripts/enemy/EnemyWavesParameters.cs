@@ -37,6 +37,8 @@ public class EnemyWavesParameters : MonoBehaviour
         if (currentEnemies.Count == maxEnemies)
         {
             StartCoroutine(waveChangeDelay());
+            spawnManager.GetComponent<uIscripts>().winningPannelActivate = true;
+
         }     
     }
     IEnumerator waveChangeDelay()

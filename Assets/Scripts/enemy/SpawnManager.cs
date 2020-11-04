@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     [HideInInspector]
     public int i = 0, amountOfEnemies = 0, waveNumber = 0,amountOfEasiestEnemy;
     public GameObject[] enemyPrefabs;
-    //[HideInInspector]
+    [HideInInspector]
     public int enemyIndexer=0;
 
 

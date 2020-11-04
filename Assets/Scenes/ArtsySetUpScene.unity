@@ -10262,12 +10262,12 @@ PrefabInstance:
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[0]
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[1]
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
