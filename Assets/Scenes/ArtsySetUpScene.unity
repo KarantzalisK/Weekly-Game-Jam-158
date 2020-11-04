@@ -9594,6 +9594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1943291030605264895, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1943291030606221281, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -10004,7 +10009,17 @@ PrefabInstance:
     - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
         type: 3}
       propertyPath: reloadDelay
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
+        type: 3}
+      propertyPath: boltSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
+        type: 3}
+      propertyPath: boltdmg
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5034680308500667796, guid: fb4dc1a2750d4764e88f395a728820ea,
         type: 3}
@@ -10262,12 +10277,12 @@ PrefabInstance:
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[0]
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[1]
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
@@ -10289,6 +10304,11 @@ PrefabInstance:
       propertyPath: enemiesInThisRound.Array.data[3]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
+        type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 210884401}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe39b9600ea44644ab97cf660862a4d4, type: 3}
 --- !u!4 &7428548738211415489 stripped
@@ -10549,7 +10569,7 @@ PrefabInstance:
     - target: {fileID: 8880039959606640121, guid: 7f7c22468e51cf94286fc07f86f79cac,
         type: 3}
       propertyPath: coinsToUpgrade
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7c22468e51cf94286fc07f86f79cac, type: 3}

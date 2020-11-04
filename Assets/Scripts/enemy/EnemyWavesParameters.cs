@@ -15,7 +15,7 @@ public class EnemyWavesParameters : MonoBehaviour
     public float enemySpawningRate;
     //[HideInInspector]
     public List<GameObject> currentEnemies;
-    private GameObject spawnManager;
+    public GameObject spawnManager;
     public List<int> enemiesInThisRound;
     
 
