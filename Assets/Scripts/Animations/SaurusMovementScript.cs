@@ -8,7 +8,6 @@ public class SaurusMovementScript : MonoBehaviour
     private Vector2 lizardLoc;
     public List<Transform> locations;
     public int speed;
-    public float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +25,9 @@ public class SaurusMovementScript : MonoBehaviour
     private void locationSwitcher()
     {
         transform.position = Vector2.MoveTowards(transform.position, locations[locationIndex].position, speed*Time.deltaTime);
-        if (transform.position.x>= locations[locationIndex].position.x + offset)
+        if (Mathf.Approximately(transform.position.x,locations[locationIndex].position.x) )
         {
-            locationIndex = Random.Range(0, locations.Count - 1);
+            locationIndex++;
         }
         if (locationIndex == locations.Count - 1)
         {
@@ -39,13 +38,13 @@ public class SaurusMovementScript : MonoBehaviour
     private void lookOriantation()
     {
         float angle;
-        if (transform.position.x < locations[locationIndex].position.x)
+        if (transform.position.normalized.x < locations[locationIndex].position.normalized.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = true;
 
         }
         angle = Mathf.Atan2(locations[locationIndex].position.y - lizardLoc.y, locations[locationIndex].position.x - lizardLoc.x);

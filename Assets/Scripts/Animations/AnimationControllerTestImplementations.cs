@@ -20,7 +20,6 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         playerParameters = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerParameters>();
-        turretTransform = GameObject.FindGameObjectWithTag("turret").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -31,6 +30,7 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         spriteController();
         checkIfAnimationIsPlayed();
         ShowParametersNamesAtInspector();
+        wineDrunkActivate();
         if (wineSurpaced)
         {
             animator.SetTrigger("WineDrinking");
@@ -88,6 +88,13 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         {
             sprite.flipX = false;
 
+        }
+    }
+    private void wineDrunkActivate()
+    {
+        if (GetComponent<coinCollectorScript>().coinsGathered * GetComponent<coinCollectorScript>().coinMultiplier >= GetComponent<coinCollectorScript>().coinsToUpgrade)
+        {
+            animator.SetTrigger("WineDrinking");
         }
     }
     private void ShowParametersNamesAtInspector()

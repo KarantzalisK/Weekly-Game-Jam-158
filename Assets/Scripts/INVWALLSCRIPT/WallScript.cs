@@ -9,11 +9,13 @@ using UnityEngine.UI;
 
 
 public class WallScript : MonoBehaviour
-{   [HideInInspector]
-    public int currentWallHealth;
-    public int maxWallHealth;
+{   
+    //[HideInInspector]
+    private int currentWallHealth=0;
+    public int maxWallHealth=0;
     private GameObject enemy;
     public Slider healthslider;
+    public GameObject deadPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,17 @@ public class WallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-      
+
+        if (currentWallHealth > maxWallHealth)
+        {
+            deadPanel.SetActive(true);
+        }
+        if (deadPanel.activeSelf)
+        {
+            Time.timeScale = 0;
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -27,7 +27,6 @@ public class playerPickObject : MonoBehaviour
     void Update()
     {
         newTurretPosition = player.newTurretPosition;
-        //objTransf = turret.transform;
         PickUpObj();
 
     }
@@ -37,7 +36,6 @@ public class playerPickObject : MonoBehaviour
         {
            player.carrying = true;
             player.holdingObject = true;
-            //turret.GetComponent<moveTowerToPoint>().canTraverse = false;
 
 
 
@@ -47,7 +45,6 @@ public class playerPickObject : MonoBehaviour
 
             player.carrying = false;
             player.holdingObject = false;
-            //turret.GetComponent<moveTowerToPoint>().canTraverse = true;
 
 
         }

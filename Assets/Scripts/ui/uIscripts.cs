@@ -6,28 +6,24 @@ using UnityEngine.SceneManagement;
 public class uIscripts : MonoBehaviour
 {
     public string sceneName;
-    public GameObject pauseMenu, controllPanelBeforeStart,deadPanel,mainMenu;
-    private int wallhealthInt,maxwallhealthINT;
-    private GameObject wallHealthOBJ,waveIndexObj;
+    public GameObject pauseMenu,deadPanel,mainMenu,WinningPanel;
+    public GameObject wallHealthOBJ,waveIndexObj;
     public GameObject waveIndexTXTobj;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //wallHealthOBJ = GameObject.FindGameObjectWithTag("wall");
-        //maxwallhealthINT = wallHealthOBJ.GetComponent<WallScript>().maxWallHealth;
-        //waveIndexObj = GameObject.FindGameObjectWithTag("SpawnManager");
+        wallHealthOBJ = GameObject.FindGameObjectWithTag("wall");
+        waveIndexObj = GameObject.FindGameObjectWithTag("SpawnManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //wallhealthInt = wallHealthOBJ.GetComponent<WallScript>().currentWallHealth;
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
         {
             pauseMenu.SetActive(true);
-           // GetComponent<UiAnimationWithdotween>().UiScaleAnimation(pauseMenu);
 
         }
         if (pauseMenu.activeSelf || mainMenu.activeSelf)
@@ -39,16 +35,15 @@ public class uIscripts : MonoBehaviour
             Time.timeScale = 1;
 
         }
-        //if (wallhealthInt >= maxwallhealthINT)
-        //{
-        //    deadPanel.SetActive(true);   
-        //}
-        if (deadPanel.activeSelf)
+        if (waveIndexObj.GetComponent<SpawnManager>().waveNumber > waveIndexObj.GetComponent<SpawnManager>().activeWave.Count - 1)
         {
-            Time.timeScale = 0;
+            WinningPanel.SetActive(true);
 
         }
-        //WaveIndicateVoid();
+       
+       
+        WaveIndicateVoid();
+
     }
     public void LoadingScenes(string sceneName)
     {
@@ -61,11 +56,11 @@ public class uIscripts : MonoBehaviour
     {
         Application.Quit();
     }
-    //public void WaveIndicateVoid()
-    //{
-    //    waveIndexTXTobj.GetComponent<TMPro.TextMeshProUGUI>().text = "Wave " + "∞";
-    //}
-    
+    public void WaveIndicateVoid()
+    {
+        waveIndexTXTobj.GetComponent<TMPro.TextMeshProUGUI>().text = "Wave:" +(waveIndexObj.GetComponent<SpawnManager>().waveNumber+1);
+    }
 
-    
+
+
 }
