@@ -21,12 +21,13 @@ public class SpawnManager : MonoBehaviour
     public List<EnemyWavesParameters> activeWave;
     [HideInInspector]
     public float timeCounter, instanciateDelay;
-    //[HideInInspector]
+    [HideInInspector]
     public bool canSpawn = true;
     [HideInInspector]
     public int i = 0, amountOfEnemies = 0, waveNumber = 0,amountOfEasiestEnemy;
     public GameObject[] enemyPrefabs;
-    private int enemyIndexer=0;
+    //[HideInInspector]
+    public int enemyIndexer=0;
 
 
     void Start()
@@ -57,7 +58,8 @@ public class SpawnManager : MonoBehaviour
             ///Game Finished
             Debug.Log("Finished Final Wave Of This Level");
         }
-        Debug.LogWarning(activeWave[waveNumber].enemiesInThisRound[enemyIndexer]+"number of enemies");
+       
+        Debug.LogWarning("enemyIndexer:"+enemyIndexer+"waveNumber:"+ waveNumber);
     }
     private void enemyInstantiateCheck()
     {

@@ -8,12 +8,12 @@ using UnityEngine;
 public class EnemyWavesParameters : MonoBehaviour
 {
     //[HideInInspector]
-    [HideInInspector]
+    //[HideInInspector]
     public int maxEnemies=0 ;
     public int nextWaveStartDelay;
-    public int numberOfEnemyTypes;
+    public int numberOfEnemyTypes,DebugInt;
     public float enemySpawningRate;
-    [HideInInspector]
+    //[HideInInspector]
     public List<GameObject> currentEnemies;
     private GameObject spawnManager;
     public List<int> enemiesInThisRound;
@@ -27,6 +27,7 @@ public class EnemyWavesParameters : MonoBehaviour
         for (int i = 0; i < enemiesInThisRound.Count; i++)
         {
             maxEnemies = maxEnemies + enemiesInThisRound[i];
+          
         }
     }
 
@@ -41,6 +42,7 @@ public class EnemyWavesParameters : MonoBehaviour
     IEnumerator waveChangeDelay()
     {
         int existingEnemiesCounter=0;
+        
         foreach (GameObject actvEnm in currentEnemies)
         {
             if (actvEnm== null)
@@ -55,6 +57,7 @@ public class EnemyWavesParameters : MonoBehaviour
             spawnManager.GetComponent<SpawnManager>().waveNumber++;
             spawnManager.GetComponent<SpawnManager>().canSpawn = true;
             spawnManager.GetComponent<SpawnManager>().i = 0;
+            spawnManager.GetComponent<SpawnManager>().enemyIndexer=0;
              existingEnemiesCounter = 0;
         }
         }
