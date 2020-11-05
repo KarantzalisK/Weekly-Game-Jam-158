@@ -176,7 +176,7 @@ MonoBehaviour:
   currentHealth: 0
   maxhealth: 8
   initialHealth: 0
-  speed: 1.4
+  speed: 0.6
   enemyPathToUse: 02000000
 --- !u!1001 &548646591692482269
 PrefabInstance:

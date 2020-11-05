@@ -35,7 +35,7 @@ public class EnemyMovementWithWaypoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogWarning(enemyStats.enemyPathToUse.Count + "to count "+gameObject.name+" the number is "+enemyStats.enemyPathToUse[pathIndex]);
+        //Debug.LogWarning(enemyStats.enemyPathToUse.Count + "to count "+gameObject.name+" the number is "+enemyStats.enemyPathToUse[pathIndex]);
         enemyMovement();
       
     }

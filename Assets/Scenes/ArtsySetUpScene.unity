@@ -11778,6 +11778,21 @@ PrefabInstance:
       propertyPath: activeWave.Array.data[0]
       value: 
       objectReference: {fileID: 7428548738211415490}
+    - target: {fileID: 1943291028845002559, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 959.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943291030004407186, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 959.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943291030004407186, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -385.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1943291030592321657, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
       propertyPath: wallHealthOBJ
@@ -11892,6 +11907,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943291030606221281, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 959.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943291030606221281, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -617.5
       objectReference: {fileID: 0}
     - target: {fileID: 2821971190810247393, guid: 6cd30358943b1ff4d93bbd4a68cb4364,
         type: 3}
@@ -12512,12 +12537,17 @@ PrefabInstance:
     - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
         type: 3}
       propertyPath: boltdmg
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
         type: 3}
       propertyPath: towerReturnDistanceOffset
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034680308500667754, guid: fb4dc1a2750d4764e88f395a728820ea,
+        type: 3}
+      propertyPath: radius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5034680308500667796, guid: fb4dc1a2750d4764e88f395a728820ea,
         type: 3}
@@ -12597,6 +12627,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 907792530071622037, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.17000735
+      objectReference: {fileID: 0}
+    - target: {fileID: 907792530071622037, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.44001475
+      objectReference: {fileID: 0}
+    - target: {fileID: 907792530071622037, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.029999984
+      objectReference: {fileID: 0}
+    - target: {fileID: 907792530071622037, guid: 09c223da01b60c542808ebed8039d986,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.06000003
       objectReference: {fileID: 0}
     - target: {fileID: 1554762100816655440, guid: 09c223da01b60c542808ebed8039d986,
         type: 3}
@@ -12765,17 +12815,17 @@ PrefabInstance:
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemySpawningRate
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: nextWaveStartDelay
-      value: 60
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[0]
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
@@ -12785,7 +12835,7 @@ PrefabInstance:
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
       propertyPath: enemiesInThisRound.Array.data[2]
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4862502757933646839, guid: fe39b9600ea44644ab97cf660862a4d4,
         type: 3}
@@ -13156,7 +13206,7 @@ PrefabInstance:
     - target: {fileID: 8880039959606640121, guid: 7f7c22468e51cf94286fc07f86f79cac,
         type: 3}
       propertyPath: coinsToUpgrade
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7c22468e51cf94286fc07f86f79cac, type: 3}

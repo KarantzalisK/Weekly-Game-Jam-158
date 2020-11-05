@@ -9,15 +9,14 @@ using UnityEngine.SceneManagement;
 
 public class EnemyWavesParameters : MonoBehaviour
 {
-    //[HideInInspector]
-    //[HideInInspector]
+    [HideInInspector]
     public int maxEnemies=0 ;
     public int nextWaveStartDelay;
     public int numberOfEnemyTypes,DebugInt;
     public float enemySpawningRate;
-    //[HideInInspector]
+    private int existingEnemiesCounter = 0;
+    [HideInInspector]
     public List<GameObject> currentEnemies;
-    public GameObject spawnManager;
     public List<int> enemiesInThisRound;
 
     
@@ -25,7 +24,7 @@ public class EnemyWavesParameters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnManager = GameObject.FindGameObjectWithTag("SpawnManager");
+
        
         for (int i = 0; i < enemiesInThisRound.Count; i++)
         {
@@ -39,33 +38,41 @@ public class EnemyWavesParameters : MonoBehaviour
     {
         if (currentEnemies.Count >= maxEnemies)
         {
+
+            foreach (GameObject actvEnm in currentEnemies)
+            {
+                if (actvEnm == null)
+                {
+                    existingEnemiesCounter++;
+                }
+                if (actvEnm != null)
+                {
+                    existingEnemiesCounter = 0;
+                }
+            }
+
+        }
+        if (existingEnemiesCounter >= maxEnemies)
+        {
             StartCoroutine(waveChangeDelay());
-            spawnManager.GetComponent<uIscripts>().winningPannelActivate = true;
+        }
+            //Debug.LogWarning(existingEnemiesCounter + " posoi pethanas");
+
+    }
+    IEnumerator waveChangeDelay()
+    {
+
+    
+
+        if (existingEnemiesCounter >= maxEnemies)
+        {
+
+            //currentEnemies.Clear();
+            yield return new WaitForSeconds(nextWaveStartDelay);
+          
             SceneManager.LoadScene("ArtsySetUpScene");
 
         }
     }
-    IEnumerator waveChangeDelay()
-    {
-        int existingEnemiesCounter=0;
-        
-        foreach (GameObject actvEnm in currentEnemies)
-        {
-            if (actvEnm== null)
-            {
-                existingEnemiesCounter++;
-            }
-        }
-        if (existingEnemiesCounter >= maxEnemies)
-        {
-            currentEnemies.Clear();
-            yield return new WaitForSeconds(nextWaveStartDelay);
-            spawnManager.GetComponent<SpawnManager>().waveNumber++;
-            spawnManager.GetComponent<SpawnManager>().canSpawn = true;
-            spawnManager.GetComponent<SpawnManager>().i = 0;
-            spawnManager.GetComponent<SpawnManager>().enemyIndexer=0;
-             existingEnemiesCounter = 0;
-        }
-        }
   
 }

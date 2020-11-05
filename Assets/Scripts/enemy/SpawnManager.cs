@@ -102,11 +102,12 @@ public class SpawnManager : MonoBehaviour
     //}
     private void enemySelector()
     {
-        if (i >= activeWave[waveNumber].enemiesInThisRound[enemyIndexer])
+        if (i >= activeWave[waveNumber].enemiesInThisRound[enemyIndexer]& enemyIndexer!=2)
         {
             enemyIndexer++;
             i= 0;
         }
+        
     }
 
 }

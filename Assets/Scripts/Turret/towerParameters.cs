@@ -28,8 +28,12 @@ public class towerParameters : MonoBehaviour
     void Update()
     {
     }
- 
-   
-  
- 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, radius);
+
+    }
+
+
+
 }
