@@ -37,12 +37,17 @@ public class coinCollectorScript : MonoBehaviour
             coinsGatheredTextobj.GetComponent<Text>().text = "You are drunk GZ";
 
         }
+        if (spawnLocsIndex >= SpawnLocs.Count - 1)
+        {
+            spawnLocsIndex = 0;
+        }
     }
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag =="collectible")
             {   
                 CollectibleRectanglePosition(collision.gameObject);
+                spawnLocsIndex++;
             if (coinsGathered < coinsToUpgrade && coinsGathered < coinsToUpgrade - coinMultiplier)
             {
                 coinsGathered = coinsGathered + coinMultiplier;
@@ -59,12 +64,13 @@ public class coinCollectorScript : MonoBehaviour
     }
     private void CollectibleRectanglePosition(GameObject collectible) //respawns object to spawn locations
     {
-        spawnLocsIndex = Random.Range(0, SpawnLocs.Count);
-        if (SpawnLocs[spawnLocsIndex].transform.position != collectible.transform.position)
-        {
-            collectible.transform.position = SpawnLocs[spawnLocsIndex].transform.position;
-        }
-        
+        //spawnLocsIndex = Random.Range(0, SpawnLocs.Count);
+        //if (SpawnLocs[spawnLocsIndex].transform.position != collectible.transform.position)
+        //{
+        //    collectible.transform.position = SpawnLocs[spawnLocsIndex].transform.position;
+        //}
+        collectible.transform.position = SpawnLocs[spawnLocsIndex].transform.position;
+
 
     }
 

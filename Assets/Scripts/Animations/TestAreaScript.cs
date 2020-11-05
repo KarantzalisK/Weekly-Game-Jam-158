@@ -7,25 +7,28 @@ public class TestAreaScript : MonoBehaviour
 {
     public Transform areaEdgeTransf;
     public float respawnDelay;
-    private float timer = 0;
-    //private Animator animator;
-    //private RuntimeAnimatorController animatorController;
-    // Start is called before the first frame update
+    public float timer = 0;
+    private int index=0;
+    public List<Transform> spawnPoints;
+
     void Start()
     {
-        //animator = GetComponent<Animator>();
-        //animatorController = animator.runtimeAnimatorController;
-        //respawnDelay = animatorController.animationClips[0].length;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = spawnPoints[index].transform.position;
         timer += Time.deltaTime;
         if (timer >= respawnDelay)
         {
-            transform.position = new Vector2(Random.Range(-areaEdgeTransf.position.x, areaEdgeTransf.position.x), Random.Range(-areaEdgeTransf.position.y, areaEdgeTransf.position.y));
+            index++;
             timer = 0;
+        }
+        if (spawnPoints.Count-1<= index)
+        {
+            index = 0;
         }
     }
 
