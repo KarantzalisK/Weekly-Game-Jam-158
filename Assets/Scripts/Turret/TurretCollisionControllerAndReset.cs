@@ -8,7 +8,7 @@ using UnityEngine;
 public class TurretCollisionControllerAndReset : MonoBehaviour
 {
     private PlayerParameters player;
-    private PlayerthrowObj throwObj;
+    //private PlayerthrowObj throwObj;
     [HideInInspector]
     public Vector2 turretSpawningPosition;
     private float towerRespawnDelay;
@@ -16,12 +16,13 @@ public class TurretCollisionControllerAndReset : MonoBehaviour
     public bool returnTurret=false;
     private GameObject playerOBJ;
 
+
     // Start is called before the first frame update
     void Start()
     {
         playerOBJ = GameObject.FindGameObjectWithTag("Player");
         player =playerOBJ.GetComponent<PlayerParameters>();
-        throwObj = playerOBJ.GetComponent<PlayerthrowObj>();
+        //throwObj = playerOBJ.GetComponent<PlayerthrowObj>();
         turretSpawningPosition = this.gameObject.transform.position;
 
     }
@@ -43,12 +44,12 @@ public class TurretCollisionControllerAndReset : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("enemy"))
-        {
-            collision.GetComponent<EnemyResetAndParameters>().currentHealth +=  GetComponent<towerParameters>().towerDMG;
+        //if (collision.CompareTag("enemy"))
+        //{
+        //    collision.GetComponent<EnemyResetAndParameters>().currentHealth +=  GetComponent<towerParameters>().towerDMG;
 
 
-        }
+        //}
         if (collision.CompareTag("wall") )
         {
             player.canShoot = false;
@@ -63,7 +64,7 @@ public class TurretCollisionControllerAndReset : MonoBehaviour
         
         towerRespawnDelay = GetComponent<towerParameters>().turretRespawnDelay;
         yield return new WaitForSeconds(towerRespawnDelay);
-        throwObj.shootingTurretAction(turretSpawningPosition);
+        //throwObj.shootingTurretAction(turretSpawningPosition);
     }
     
 }

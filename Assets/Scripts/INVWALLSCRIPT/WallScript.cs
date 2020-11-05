@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //TO-DO
 //THIS IS WRONG IN SO MANY WAYS
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 public class WallScript : MonoBehaviour
 {   
     //[HideInInspector]
-    private int currentWallHealth=0;
+    public int currentWallHealth=0;
     public int maxWallHealth=0;
     private GameObject enemy;
     public Slider healthslider;
@@ -29,7 +30,8 @@ public class WallScript : MonoBehaviour
 
         if (currentWallHealth > maxWallHealth)
         {
-            deadPanel.SetActive(true);
+            //deadPanel.SetActive(true);
+            SceneManager.LoadScene("ArtsySetUpScene");
         }
         if (deadPanel.activeSelf)
         {

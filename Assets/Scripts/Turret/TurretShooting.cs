@@ -44,8 +44,10 @@ public class TurretShooting : MonoBehaviour
 
         FindClosestEnemy();
         if (timer >= tower.reloadDelay&&enemyToShoot!=null)
-        {
-            shoot();
+        {   if (tower.canShoot)
+            {
+                shoot();
+            }
             timer = 0;
         }
 

@@ -52,6 +52,7 @@ public class playerPickObject : MonoBehaviour
         if (player.carrying)
         {
             objTransf.position = newTurretPosition.position;
+            turret.GetComponent<towerParameters>().canShoot=false;
 
 
         }
@@ -59,6 +60,8 @@ public class playerPickObject : MonoBehaviour
         {
             player.carrying = false;
             player.holdingObject = false;
+            turret.GetComponent<towerParameters>().canShoot = true;
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

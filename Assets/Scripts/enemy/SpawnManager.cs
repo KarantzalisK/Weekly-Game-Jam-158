@@ -56,10 +56,8 @@ public class SpawnManager : MonoBehaviour
         }
         else {
             ///Game Finished
-            Debug.Log("Finished Final Wave Of This Level");
         }
        
-        Debug.LogWarning("enemyIndexer:"+enemyIndexer+"waveNumber:"+ waveNumber);
     }
     private void enemyInstantiateCheck()
     {
@@ -81,9 +79,9 @@ public class SpawnManager : MonoBehaviour
             }
     }
     private void enemyInstantiatNaddToList()
-    {
-        if (enemyIndexer < (enemyPrefabs.Length)) { 
-       activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[UnityEngine.Random.Range(enemyIndexer, enemyIndexer + 2)], gameObject.transform.position, Quaternion.identity));
+    {   
+        if (enemyIndexer==0) { 
+       activeWave[waveNumber].currentEnemies.Add(Instantiate(enemyPrefabs[0], gameObject.transform.position, Quaternion.identity));
         }
         else
         {

@@ -14,6 +14,8 @@ public class towerParameters : MonoBehaviour
     public float boltLifeSpam;
     public LayerMask enemieLayer;
     public float towerReturnDistanceOffset;
+    [HideInInspector]
+    public bool canShoot;
     // Start is called before the first frame update
     void Start()
     {

@@ -30,11 +30,11 @@ public class coinCollectorScript : MonoBehaviour
     {
         if (coinsGathered < coinsToUpgrade * coinMultiplier)
         {
-            coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
+            coinsGatheredTextobj.GetComponent<Text>().text = coinsGathered.ToString() + "/" + coinsToUpgrade.ToString();
         }
         else
         {
-            coinsGatheredTextobj.GetComponent<TMPro.TextMeshProUGUI>().text = "You are drunk GZ";
+            coinsGatheredTextobj.GetComponent<Text>().text = "You are drunk GZ";
 
         }
     }

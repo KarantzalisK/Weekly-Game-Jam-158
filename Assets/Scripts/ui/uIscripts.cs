@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class uIscripts : MonoBehaviour
@@ -60,7 +61,7 @@ public class uIscripts : MonoBehaviour
     }
     public void WaveIndicateVoid()
     {
-        waveIndexTXTobj.GetComponent<TMPro.TextMeshProUGUI>().text = "Wave:" +(waveIndexObj.GetComponent<SpawnManager>().waveNumber+1);
+        waveIndexTXTobj.GetComponent<Text>().text = "Wave:" + (waveIndexObj.GetComponent<SpawnManager>().waveNumber + 1);
     }
 
 

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 //TO-DO
 //THIS SHOULDN'T BE ON A SEPERATE SCRIPT
@@ -17,6 +19,7 @@ public class EnemyWavesParameters : MonoBehaviour
     public List<GameObject> currentEnemies;
     public GameObject spawnManager;
     public List<int> enemiesInThisRound;
+
     
 
     // Start is called before the first frame update
@@ -34,12 +37,13 @@ public class EnemyWavesParameters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentEnemies.Count == maxEnemies)
+        if (currentEnemies.Count >= maxEnemies)
         {
             StartCoroutine(waveChangeDelay());
             spawnManager.GetComponent<uIscripts>().winningPannelActivate = true;
+            SceneManager.LoadScene("ArtsySetUpScene");
 
-        }     
+        }
     }
     IEnumerator waveChangeDelay()
     {

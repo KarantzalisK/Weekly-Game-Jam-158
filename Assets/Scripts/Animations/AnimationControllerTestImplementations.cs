@@ -31,6 +31,7 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         checkIfAnimationIsPlayed();
         ShowParametersNamesAtInspector();
         wineDrunkActivate();
+        cantMoveWhilePickingUpTurret();
         if (wineSurpaced)
         {
             animator.SetTrigger("WineDrinking");
@@ -102,6 +103,18 @@ public class AnimationControllerTestImplementations : MonoBehaviour
         for (int i = 0; i < animatorParametersCount; i++)
         {
             animationParametersNames.Add(animator.GetParameter(i).name);
+        }
+    }
+    private void cantMoveWhilePickingUpTurret()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("PickUpTurret"))
+        {
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<PlayerMovement>().enabled = true;
+
         }
     }
 }
