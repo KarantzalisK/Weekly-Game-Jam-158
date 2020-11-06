@@ -10,7 +10,7 @@ using UnityEngine;
 public class TurretShooting : MonoBehaviour
 
 {   
-    private towerParameters tower;
+    public towerParameters tower;
     private float smallestDistance;
     [HideInInspector]
     public Collider2D enemyToShoot;
@@ -18,7 +18,7 @@ public class TurretShooting : MonoBehaviour
     private float timer;
     [HideInInspector]
     public Collider2D[] currentEnemiesInScene;
-    private List<GameObject> currentBolts; //public gia to debug meta prepei na einai private
+    public List<GameObject> currentBolts=null; //public gia to debug meta prepei na einai private
     //private moveTowerToPoint moveTowerToPoint;
 
     // Start is called before the first frame update
@@ -46,7 +46,7 @@ public class TurretShooting : MonoBehaviour
         if (timer >= tower.reloadDelay && enemyToShoot!=null)
         {   if (tower.canShoot)
             {
-                shoot();
+                Shoot();
             }
             timer = 0;
         }
@@ -78,14 +78,26 @@ public class TurretShooting : MonoBehaviour
         }
 
     }
-    public void shoot()
+    public void Shoot()
     {
 
       currentBolts.Add(Instantiate(tower.boltPrefab,tower.transform.position+tower.radiousOffset, Quaternion.identity));
-      
+        //currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower = this.gameObject.GetComponent<towerParameters>();
+
         if (currentBolts != null)
         {
-            currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower=this.gameObject.GetComponent<towerParameters>();
+            //currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower=this.gameObject.GetComponent<towerParameters>();
+            currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().targetToKill=enemyToShoot.transform.position;
+            if (this.gameObject.name.Contains("2"))
+            {
+                currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().towerIndex =1;
+
+            }
+            else
+            {
+                currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().towerIndex = 0;
+
+            }
         }
         else
         {

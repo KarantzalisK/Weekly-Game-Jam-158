@@ -51,6 +51,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -169,3 +170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c64b69982d3624296ba104b2ae3adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower:
+  - {fileID: 0}
+  - {fileID: 0}
+  turretShooting: {fileID: 0}
+  targetToKill: {x: 0, y: 0, z: 0}
+  boltTransf: {fileID: 4246228772910847868}
+  boltLifeSpam: 3
+  boltdmg: 1.75
+  boltSpeed: 6
+  towerIndex: 0
