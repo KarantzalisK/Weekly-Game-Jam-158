@@ -7,27 +7,25 @@ using UnityEngine;
 public class BoltSeekTarget : MonoBehaviour
 {   
     [HideInInspector]
-    public List<towerParameters> towerParameters;
+    public towerParameters towerParameters=null;
     [HideInInspector]
-    public GameObject[] tower;
-    [HideInInspector]
-    public TurretShooting turretShooting;
+    private TurretShooting turretShooting;
     [HideInInspector]
     public Vector3 targetToKill;
-    public Transform boltTransf;
-    public float boltLifeSpam;
-    public float boltdmg,boltSpeed;
-    [HideInInspector]
-    public int towerIndex=0;
+    private Transform boltTransf;
+    private float boltLifeSpam;
+    private float boltdmg,boltSpeed;
+ 
     // Start is called before the first frame update
     //placed at bolt preab
     void Start()
     {
-        //tower= GameObject.FindGameObjectsWithTag("");
-        tower = GameObject.FindGameObjectsWithTag("turret");        
-        turretShooting = tower[towerIndex].GetComponent<TurretShooting>();
+        turretShooting = towerParameters.GetComponent<TurretShooting>();
         targetToKill = turretShooting.enemyToShoot.gameObject.transform.position;
         boltTransf = this.transform;
+        boltSpeed = towerParameters.boltSpeed;
+        boltLifeSpam = towerParameters.boltLifeSpam;
+        boltdmg = towerParameters.boltdmg;
         StartCoroutine(waitToDestroy());
     }
 

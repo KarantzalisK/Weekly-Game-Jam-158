@@ -18,7 +18,8 @@ public class TurretShooting : MonoBehaviour
     private float timer;
     [HideInInspector]
     public Collider2D[] currentEnemiesInScene;
-    public List<GameObject> currentBolts=null; //public gia to debug meta prepei na einai private
+    [HideInInspector]
+    public List<GameObject> currentBolts=null; //public gia na exoun prosbasei kai h dyo pirgoi h osoi einai genikos
     //private moveTowerToPoint moveTowerToPoint;
 
     // Start is called before the first frame update
@@ -26,14 +27,12 @@ public class TurretShooting : MonoBehaviour
     {
         tower =this.gameObject.GetComponent<towerParameters>();
         smallestDistance = Mathf.Infinity;
-        //moveTowerToPoint = GetComponent<moveTowerToPoint>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //towerSeekNDestroy();
 
 
 
@@ -82,22 +81,10 @@ public class TurretShooting : MonoBehaviour
     {
 
       currentBolts.Add(Instantiate(tower.boltPrefab,tower.transform.position+tower.radiousOffset, Quaternion.identity));
-        //currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower = this.gameObject.GetComponent<towerParameters>();
 
         if (currentBolts != null)
         {
-            //currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower=this.gameObject.GetComponent<towerParameters>();
-            currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().targetToKill=enemyToShoot.transform.position;
-            if (this.gameObject.name.Contains("2"))
-            {
-                currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().towerIndex =1;
-
-            }
-            else
-            {
-                currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().towerIndex = 0;
-
-            }
+            currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().towerParameters = this.gameObject.GetComponent<towerParameters>();
         }
         else
         {

@@ -15,8 +15,9 @@ public class towerParameters : MonoBehaviour
     public LayerMask enemieLayer,towerLayer;
     public Vector3 radiousOffset=new Vector3(0,0,0);
     public float towerReturnDistanceOffset,towerDetectorRadious;
-    //[HideInInspector]
+    [HideInInspector]
     public bool canShoot;
+    [HideInInspector]
     public Collider2D[] towersNearby;
     // Start is called before the first frame update
     void Start()
