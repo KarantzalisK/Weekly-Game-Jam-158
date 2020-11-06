@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6759419729712082448}
   - component: {fileID: 2029305020106084569}
   - component: {fileID: 3455850280827649925}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gnoul
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -185,10 +185,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7801690593453902889}
     m_Modifications:
+    - target: {fileID: 390918135447282317, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 500388406717401941, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1486654275964532428, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486654275964532428, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2381187217597430270, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
@@ -209,6 +224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480136694293416327, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4297222295807192060, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
@@ -262,10 +282,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d2ab205463826244e8b6351ba293fe00,
         type: 3}
+    - target: {fileID: 5591657508858235616, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
       propertyPath: m_Name
       value: Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529213883677791518, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7035499735349051914, guid: d75b5b476ed5aef429370ab854e86a34,
         type: 3}
@@ -406,6 +436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736047734875807367, guid: d75b5b476ed5aef429370ab854e86a34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75b5b476ed5aef429370ab854e86a34, type: 3}

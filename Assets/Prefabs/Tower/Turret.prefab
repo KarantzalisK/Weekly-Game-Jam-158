@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyToShoot: {fileID: 0}
   currentEnemiesInScene: []
+  currentBolts: []
 --- !u!114 &5034680308500667754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   towerReturnDistanceOffset: 1
+  canShoot: 0
 --- !u!114 &1860707183317752270
 MonoBehaviour:
   m_ObjectHideFlags: 0

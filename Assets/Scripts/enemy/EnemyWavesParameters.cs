@@ -12,7 +12,7 @@ public class EnemyWavesParameters : MonoBehaviour
     [HideInInspector]
     public int maxEnemies=0 ;
     public int nextWaveStartDelay;
-    public int numberOfEnemyTypes,DebugInt;
+    public int numberOfEnemyTypes;
     public float enemySpawningRate;
     private int existingEnemiesCounter = 0;
     [HideInInspector]

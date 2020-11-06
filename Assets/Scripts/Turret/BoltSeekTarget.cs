@@ -5,13 +5,19 @@ using UnityEngine;
 //TO-DO
 //RENAME SCRIPT
 public class BoltSeekTarget : MonoBehaviour
-{
-    private towerParameters tower;
-    private TurretShooting turretShooting;
-    private Vector3 targetToKill;
-    private Transform boltTransf;
-    private float boltLifeSpam;
-    private float boltdmg,boltSpeed;
+{   
+    //[HideInInspector]
+    public towerParameters tower;
+    [HideInInspector]
+    public TurretShooting turretShooting;
+    [HideInInspector]
+    public Vector3 targetToKill;
+    [HideInInspector]
+    public Transform boltTransf;
+    [HideInInspector]
+    public float boltLifeSpam;
+    [HideInInspector]
+    public float boltdmg,boltSpeed;
     // Start is called before the first frame update
     //placed at bolt preab
     void Start()
@@ -19,11 +25,11 @@ public class BoltSeekTarget : MonoBehaviour
         tower= GameObject.FindObjectOfType<towerParameters>().GetComponent<towerParameters>();
         turretShooting = tower.GetComponent<TurretShooting>();
         targetToKill = turretShooting.enemyToShoot.gameObject.transform.position;
-        boltTransf = this.transform;
+        boltTransf = transform;
         boltLifeSpam = tower.boltLifeSpam;
         boltdmg = tower.boltdmg;
-        StartCoroutine(waitToDestroy());
         boltSpeed = tower.boltSpeed;
+        StartCoroutine(waitToDestroy());
     }
 
     // Update is called once per frame
@@ -32,7 +38,7 @@ public class BoltSeekTarget : MonoBehaviour
         boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill, boltSpeed * Time.deltaTime);
         if (targetToKill == null)
         {
-            //Destroy(this.gameObject);
+            //Destroy(this.gameObject); katastrefete apo to animation script
         }
 
     }

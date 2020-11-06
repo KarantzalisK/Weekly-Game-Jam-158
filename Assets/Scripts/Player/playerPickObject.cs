@@ -69,6 +69,8 @@ public class playerPickObject : MonoBehaviour
         if (collision.gameObject.tag == "turret")
         {
             player.canCarry = true;
+            turret = collision.gameObject;
+            objTransf = turret.transform;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -76,6 +78,7 @@ public class playerPickObject : MonoBehaviour
         if (collision.gameObject.tag == "turret")
         {
             player.canCarry = false;
+            //turret = null;
         }
     }
 }

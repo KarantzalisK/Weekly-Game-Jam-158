@@ -14,17 +14,17 @@ public class TurretShooting : MonoBehaviour
     private float smallestDistance;
     [HideInInspector]
     public Collider2D enemyToShoot;
-    private List<GameObject> boltsAtHand;
     [HideInInspector]
     private float timer;
     [HideInInspector]
     public Collider2D[] currentEnemiesInScene;
+    private List<GameObject> currentBolts; //public gia to debug meta prepei na einai private
     //private moveTowerToPoint moveTowerToPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        tower = GetComponent<towerParameters>();
+        tower =this.gameObject.GetComponent<towerParameters>();
         smallestDistance = Mathf.Infinity;
         //moveTowerToPoint = GetComponent<moveTowerToPoint>();
     }
@@ -43,7 +43,7 @@ public class TurretShooting : MonoBehaviour
         timer += Time.fixedDeltaTime;
 
         FindClosestEnemy();
-        if (timer >= tower.reloadDelay&&enemyToShoot!=null)
+        if (timer >= tower.reloadDelay && enemyToShoot!=null)
         {   if (tower.canShoot)
             {
                 shoot();
@@ -58,11 +58,11 @@ public class TurretShooting : MonoBehaviour
     private void FindClosestEnemy()
     { 
         enemyToShoot = null;
-       currentEnemiesInScene=(Physics2D.OverlapCircleAll(transform.position, tower.radius, tower.enemieLayer));
+       currentEnemiesInScene=(Physics2D.OverlapCircleAll(transform.position+tower.radiousOffset, tower.radius, tower.enemieLayer));
        
         foreach (Collider2D enemyIndex in currentEnemiesInScene)
         {
-            float distance = (transform.position - enemyIndex.transform.position).sqrMagnitude;
+            float distance = (transform.position+tower.radiousOffset - enemyIndex.transform.position).sqrMagnitude;
            
                 if (smallestDistance > distance)
                 {
@@ -81,18 +81,16 @@ public class TurretShooting : MonoBehaviour
     public void shoot()
     {
 
-        Instantiate(tower.boltPrefab, tower.transform.position, Quaternion.identity);
+      currentBolts.Add(Instantiate(tower.boltPrefab,tower.transform.position+tower.radiousOffset, Quaternion.identity));
+      
+        if (currentBolts != null)
+        {
+            currentBolts[currentBolts.Count - 1].GetComponent<BoltSeekTarget>().tower=this.gameObject.GetComponent<towerParameters>();
+        }
+        else
+        {
+            currentBolts.Clear();
+        }
     }
-    //private void towerSeekNDestroy()
-    //{
-    //    if (enemyToShoot != null && Vector2.Distance(transform.position,enemyToShoot.transform.position)>tower.towerReturnDistanceOffset)
-    //    {
-    //        //moveTowerToPoint.canTraverse = false;
-    //        transform.position = Vector2.MoveTowards(transform.position, enemyToShoot.transform.position, tower.shootinSpeed);
-    //    }
-    //    //else
-    //    //{
-    //    //    moveTowerToPoint.canTraverse = true;
-    //    //}
-    //}
+
 } 
