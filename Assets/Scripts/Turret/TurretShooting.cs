@@ -10,7 +10,7 @@ using UnityEngine;
 public class TurretShooting : MonoBehaviour
 
 {   
-    public towerParameters tower;
+    private towerParameters tower;
     private float smallestDistance;
     [HideInInspector]
     public Collider2D enemyToShoot;
