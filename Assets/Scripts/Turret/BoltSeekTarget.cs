@@ -15,6 +15,7 @@ public class BoltSeekTarget : MonoBehaviour
     private Transform boltTransf;
     private float boltLifeSpam;
     private float boltdmg,boltSpeed;
+    private bool contactedEnemy=false;
  
     // Start is called before the first frame update
     //placed at bolt preab
@@ -32,10 +33,13 @@ public class BoltSeekTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boltTransf.position = Vector2.MoveTowards(boltTransf.position,targetToKill, boltSpeed * Time.deltaTime);
+       if (!contactedEnemy)
+        {
+            boltTransf.position = Vector2.MoveTowards(boltTransf.position, targetToKill, boltSpeed * Time.deltaTime);
+        }
         if (targetToKill == null)
         {
-            //Destroy(this.gameObject); katastrefete apo to animation script
+            GetComponent<PlayAnimationThenDestroy>().useThenKill();
         }
 
     }
@@ -45,8 +49,9 @@ public class BoltSeekTarget : MonoBehaviour
         if (collision.CompareTag("enemy"))
         {
            collision.GetComponent<EnemyResetAndParameters>().currentHealth += boltdmg;
-            //Destroy(this.gameObject);
+            contactedEnemy = true;
         }
+
         
         
        
@@ -54,7 +59,7 @@ public class BoltSeekTarget : MonoBehaviour
     IEnumerator waitToDestroy()
     {
         yield return new WaitForSeconds(boltLifeSpam);
-        Destroy(this.gameObject);
+        GetComponent<PlayAnimationThenDestroy>().useThenKill();
     }
 
 }

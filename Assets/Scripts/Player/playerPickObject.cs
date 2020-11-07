@@ -10,7 +10,6 @@ public class playerPickObject : MonoBehaviour
 {
    
     private Transform newTurretPosition;
-    private Transform objTransf;
     private GameObject turret;
     private PlayerParameters player;
 
@@ -19,7 +18,6 @@ public class playerPickObject : MonoBehaviour
     {
         turret = GameObject.FindGameObjectWithTag("turret");
         player = GetComponent<PlayerParameters>();
-        objTransf = turret.GetComponent<Transform>();
 
     }
 
@@ -51,7 +49,7 @@ public class playerPickObject : MonoBehaviour
 
         if (player.carrying)
         {
-            objTransf.position = newTurretPosition.position;
+            turret.GetComponent<Transform>().position = newTurretPosition.position;
             turret.GetComponent<towerParameters>().canShoot=false;
 
 
@@ -66,19 +64,17 @@ public class playerPickObject : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "turret")
+        if (collision.CompareTag("turret")&& !player.carrying)
         {
             player.canCarry = true;
             turret = collision.gameObject;
-            objTransf = turret.transform;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "turret")
+        if (collision.CompareTag("turret"))
         {
             player.canCarry = false;
-            //turret = null;
         }
     }
 }

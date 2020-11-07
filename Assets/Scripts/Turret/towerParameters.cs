@@ -22,8 +22,8 @@ public class towerParameters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
 
+        canShoot = GameObject.FindObjectOfType<PlayerParameters>().canShoot;
 
     }
 
@@ -39,16 +39,24 @@ public class towerParameters : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, towerDetectorRadious);
 
     }
-    private void checkIfTowerNearby()
+    private void checkIfTowerNearby()//checks a table of towers this can work with multiple turrets not only with 2
     {
         towersNearby = Physics2D.OverlapCircleAll(transform.position, towerDetectorRadious, towerLayer);
         if (towersNearby.Length != 0)
         {
             canShoot = false;
+            foreach (Collider2D coli in towersNearby)
+            {
+                coli.gameObject.GetComponent<towerParameters>().canShoot = false;
+            }
         }
-        else
+        else if (!GameObject.FindObjectOfType<PlayerParameters>().carrying)
         {
             canShoot = true;
+            foreach (Collider2D coli in towersNearby)
+            {
+                coli.gameObject.GetComponent<towerParameters>().canShoot = true;
+            }
         }
     }
 

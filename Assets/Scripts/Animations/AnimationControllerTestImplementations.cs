@@ -51,12 +51,15 @@ public class AnimationControllerTestImplementations : MonoBehaviour
     }
     private void CarryTurretController()
     {
-        if (Input.GetKey(KeyCode.Space) && playerParameters.canCarry)
+        if (Input.GetKey(KeyCode.Space) && playerParameters.canCarry )
         {
-            animator.SetBool("Carrying", true);
+            
+                animator.SetBool("Carrying", true);
+
+            
         }
       
-        else
+        else if(!playerParameters.carrying)
         {
             animator.SetBool("Carrying", false);
             

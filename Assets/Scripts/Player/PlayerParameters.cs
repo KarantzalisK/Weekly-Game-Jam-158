@@ -17,7 +17,7 @@ public class PlayerParameters : MonoBehaviour
     [HideInInspector]
     public Vector2 movement;
     public Transform newTurretPosition;
-    //[HideInInspector]
+    [HideInInspector]
     public GameObject turretObj;
     [HideInInspector]
     public Vector2 clickVector;
@@ -29,7 +29,7 @@ public class PlayerParameters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turretObj =GameObject.FindGameObjectWithTag("turret");
+        turretObj =null;
 
 
 
@@ -41,6 +41,20 @@ public class PlayerParameters : MonoBehaviour
         movement = GetComponent<PlayerMovement>().movement;
         clickVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("turret"))
+        {
+            turretObj = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("turret"))
+        {
+            turretObj = collision.gameObject;
+        }
     }
 
 

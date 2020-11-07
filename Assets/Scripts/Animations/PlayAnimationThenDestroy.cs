@@ -54,5 +54,10 @@ public class PlayAnimationThenDestroy : MonoBehaviour
             animationParametersNames.Add(animator.GetParameter(i).name);
         }
     }
+    public void useThenKill()
+    {
+        animator.SetTrigger(animationParametersNames[accordingToInspectorListTriggerIndex]);
+        DestroyAfterAnimationEnds();
+    }
 
 }
